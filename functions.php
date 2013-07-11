@@ -31,7 +31,7 @@ if (function_exists('add_theme_support'))
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('featured', 600, 200, true); // Featured Image;
-    add_image_size('post_featured', '', 400, true); // Featured Image;
+    add_image_size('post_featured', 800, 250, true); // Featured Image;
 
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
@@ -126,7 +126,7 @@ function html5blank_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
     
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0.2', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
     wp_register_style('tuktuk', get_template_directory_uri() . '/css/tuktuk.css', array(), '1.0.0'); // Tuktuk CSS
     wp_enqueue_style('tuktuk'); // Enqueue it!
