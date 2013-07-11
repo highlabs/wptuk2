@@ -1,22 +1,30 @@
 <?php get_header(); ?>
+	<!-- bio -->
 
+	<!-- /bio -->
 	<!-- section -->
-	<section role="main" class="row padding bck">
-	<?php if (have_posts()): the_post(); ?>
+	<section role="main" class="row">
 	
-		<h1 class="text bold color theme margin-bottom"><?php _e( 'Author Archives for ', 'html5blank' ); echo get_the_author(); ?></h1>
-
-	<?php if ( get_the_author_meta('description')) : ?>
+	<div id="sobre" class="row bck avatar_about">
+	        <?php
+		        $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+		    ?>
+            <div class="column_3 padding">
+                <?php echo get_avatar($curauth->ID, 250); ?>
+            </div>
+            <div class="column_9 padding">
+                <h1 class="text bold color theme "><?php echo $curauth->user_nicename; ?></h1>
+                <h5 class="text normal italic"><?php echo $curauth->nickname; ?></h5>
+                <h6 class="text justify margin-bottom"><?php echo $curauth->user_description; ?></h6>
+                <span class="icon laptop"></span> <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a>
+            </div>
+    </div>
+<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	
-	<?php echo get_avatar(get_the_author_meta('user_email')); ?>	
-<hr>	
-	<?php endif; ?>
-	<?php rewind_posts(); while (have_posts()) : the_post(); ?>
-	
-		<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class('column_8'); ?>>
-        <div class="row">
-            <div class="margin-bottom margin-left">
+	<!-- article -->
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div class="row loop">
+            <div class="column_5 margin-bottom margin-left">
 
                  <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('featured', array('class' => 'responsive')); ?></a>
             </div>
@@ -31,26 +39,20 @@
 		</div>
 	</article>
 	<!-- /article -->
-		
-	<?php endwhile; ?>
 	
-	<?php else: ?>
-	
-		<!-- article -->
-		<article>
-			
-			<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-			
-		</article>
-		<!-- /article -->
-	
-	<?php endif; ?>
-		
+<?php endwhile; ?>
+
+<?php else: ?>
+
+	<!-- article -->
+	<article>
+		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+	</article>
+	<!-- /article -->
+
+<?php endif; ?>
+	</section>
+
 		<?php get_template_part('pagination'); ?>
 	
-	</section>
-	<!-- /section -->
-	
-<?php get_sidebar(); ?>
-
 <?php get_footer(); ?>
