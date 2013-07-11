@@ -329,8 +329,13 @@ ul li {
 .search-input {
 width: 90%!important;
 }
-.fill{
-    width:100%;
-    height:100%;
-    float: left;
+
+.avatar_about img{
+	width: 100%!important;
+	height: auto!important;
+	-webkit-border-radius: 50%!important;
+	-moz-border-radius: 50%!important;
+	-ms-border-radius: 50%!important;
+	-o-border-radius: 50%!important;
+	border-radius: 50%!important;
 }
