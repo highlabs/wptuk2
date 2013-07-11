@@ -50,6 +50,9 @@ img {
 	max-width:100%;
 	vertical-align:bottom;
 }
+p {
+margin-bottom: 16px!important;
+}
 a {
 	color:#444;
 	text-decoration:none;
@@ -327,7 +330,7 @@ ul li {
 }
 
 .search-input {
-width: 90%!important;
+width: 60%!important;
 }
 
 .avatar_about img{
