@@ -191,7 +191,7 @@ if (function_exists('register_sidebar'))
         'name' => __('Widget Area 1', 'html5blank'),
         'description' => __('Description for this widget-area...', 'html5blank'),
         'id' => 'widget-area-1',
-        'before_widget' => '<div id="%1$s" class="%2$s  bck dark padding color white margin-bottom">',
+        'before_widget' => '<div id="%1$s" class="%2$s  bck padding light margin-bottom">',
         'after_widget' => '</div>',
         'before_title' => '<h5 class="text normal margin-bottom">',
         'after_title' => '</h5>'
@@ -202,7 +202,7 @@ if (function_exists('register_sidebar'))
         'name' => __('Widget Area 2', 'html5blank'),
         'description' => __('Description for this widget-area...', 'html5blank'),
         'id' => 'widget-area-2',
-        'before_widget' => '<div id="%1$s" class="%2$s bck dark padding color white margin-bottom">',
+        'before_widget' => '<div id="%1$s" class="%2$s bck padding light margin-bottom">',
         'after_widget' => '</div>',
         'before_title' => '<h5 class="text normal">',
         'after_title' => '</h5>'
